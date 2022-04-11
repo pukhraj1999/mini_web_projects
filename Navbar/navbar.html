@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Easy Way to Create Navbar</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .menu {
+      display: none;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5rem;
+      padding: 10px;
+      background-color: black;
+    }
+    .nav__left {
+      color: white;
+    }
+    .nav__right > a {
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      padding: 10px;
+    }
+    .nav__right > a:hover {
+      background-color: green;
+      border-radius: 20px;
+    }
+    @media only screen and (max-width: 1061px) {
+      nav {
+        display: block;
+      }
+      .nav__right {
+        display: none;
+      }
+      .menu {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: down 1.2s ease-in-out;
+      }
+    }
+    @keyframes down {
+      from {
+        transform: translateY(-200px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <body>
+    <nav>
+      <div onclick="display()" class="menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="nav__left">
+        <h1><i class="fa-solid fa-champagne-glasses"></i> Our Brand</h1>
+      </div>
+      <div id="nav_menu" class="nav__right">
+        <a href=""><i class="fa-solid fa-house"></i> Home</a>
+        <a href=""><i class="fa-solid fa-address-card"></i> About</a>
+        <a href=""><i class="fa-solid fa-id-card-clip"></i> Contact</a>
+        <a href=""
+          ><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign up</a
+        >
+        <a href=""><i class="fa-solid fa-right-to-bracket"></i> Sign in</a>
+      </div>
+    </nav>
+    <script>
+      function display() {
+        toggler = document.getElementById("nav_menu");
+        toggler.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

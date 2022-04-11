@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>HackerRank</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #e1e1e2;
+      }
+      nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #39424e;
+        padding: 10px;
+      }
+      .nav__left {
+        display: flex;
+        justify-content: center;
+      }
+      .nav__left > img {
+        margin-right: 10px;
+      }
+      .nav__left > a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        padding: 5px;
+        color: white;
+      }
+      .nav__right {
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav__right > a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        padding: 5px;
+        color: white;
+      }
+      .nav__right > button {
+        margin-left: 10px;
+        padding: 5px;
+      }
+      .login {
+        background-color: #39424e;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .signup {
+        background-color: #28af59;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+        border: 2px solid #28af59;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(27, 26, 26);
+      }
+      form > i {
+        margin-left: 10px;
+        font-size: 1.2rem;
+        color: white;
+      }
+      form > input {
+        padding: 5px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: rgb(27, 26, 26);
+      }
+      .active {
+        border-bottom: 4px solid #28af59;
+      }
+      .dash__box {
+        padding: 10px;
+        background-color: white;
+      }
+      .dash__content > p {
+        margin-bottom: -5px;
+        color: #e1e1e2;
+      }
+      p {
+        color: #bdbdc1;
+      }
+      .card {
+        padding: 20px;
+        box-shadow: 0px 2px 2px 2px #e1e1e2;
+      }
+      .card > h1 {
+        font-size: 2rem;
+      }
+      .card__kit > button {
+        font-size: 2rem;
+        padding: 5px;
+        background-color: #28af59;
+        color: white;
+        border: none;
+        box-shadow: 0px 2px 5px 2px #28af59;
+      }
+      .card__skill > button {
+        font-size: 2rem;
+        padding: 5px;
+        background-color: white;
+        color: #28af59;
+        border: none;
+        box-shadow: 0px 2px 5px 2px #28af59;
+      }
+      .special {
+        background-color: black;
+      }
+      .special > h1 {
+        color: white;
+      }
+      .topic {
+        margin-bottom: 2rem;
+      }
+      table {
+        background-color: white;
+      }
+      td {
+        font-size: 1.2rem;
+        border: 1px solid #e1e1e2;
+        padding: 20px;
+      }
+      .grayBox {
+        background-color: #e1e1e2;
+        margin-right: 5px;
+        padding: 5px;
+      }
+      .grayBox {
+        color: #39424e;
+      }
+      footer {
+        padding: 10px;
+        background-color: white !important;
+      }
+      footer > a {
+        text-decoration: none;
+        margin-left: 5px;
+      }
+      footer > a:after {
+        content: " | ";
+        color: gray;
+      }
+      .last__a:after {
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__left">
+        <img class="img-fluid" src="./logo.svg" alt="" />
+        <a class="active" href="">Prepare</a>
+        <a href="">Certify</a>
+        <a href="">Complete</a>
+      </div>
+      <div class="nav__right">
+        <form action="">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search" />
+        </form>
+        <a href="">Hiring developer?</a>
+        <button class="login">Log in</button>
+        <button class="signup">Sign Up</button>
+      </div>
+    </nav>
+    <div class="dash__box">
+      <div class="dash__content container">
+        <p>prepare</p>
+        <h1>Dashboard</h1>
+      </div>
+    </div>
+    <div class="mt-3 container">
+      <div class="prepare">
+        <h4>Your preparation</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <p>Preparation Kits</p>
+              <h1>Interview Preparation Kit</h1>
+              <p>
+                Get interview for top companies by solving <br />
+                an interview preparation kit.
+              </p>
+              <div class="card__kit">
+                <button>View all Kits</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <p>NEW SKILL</p>
+              <h1>Add your first skill</h1>
+              <p>
+                Explore and add your first skill to get started. HackerRank
+                offers a variety of skills, tracks and tutorials for you to
+                learn and improve.
+              </p>
+              <div class="card__skill">
+                <button>Explore Skills</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <h4>Certification</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <h1>Problem Solving (Basic)</h1>
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+              <button class="mt-2 btn btn-outline-success">
+                Get Certified
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <h1>Python (Basic)</h1>
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+              <button class="mt-2 btn btn-outline-success">
+                Get Certified
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="special card">
+            <h1>Stand out from the crowd</h1>
+            <p>
+              Take the HackerRank Skills Certification Test and make your
+              profile stand out
+            </p>
+            <div>
+              <button class="btn btn-light">View All Skills</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h4>Prepare By Topics</h4>
+      <div class="topic card">
+        <table>
+          <tr>
+            <td>
+              <img src="./Algorithm.svg" alt="" />
+              Algorithm
+            </td>
+            <td>
+              <img src="./DataStructure.svg" alt="" />
+              Data Structure
+            </td>
+            <td>
+              <img src="./Mathematics.svg" alt="" />
+              Mathematics
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="AI.svg" alt="" />
+              Artificial Intelligence
+            </td>
+            <td>
+              <img src="./C.svg" alt="" />
+              C
+            </td>
+            <td>
+              <img src="./C++.svg" alt="" />
+              C++
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="Java.svg" alt="" />
+              Java
+            </td>
+            <td>
+              <img src="./Python.svg" alt="" />
+              Python
+            </td>
+            <td>
+              <img src="./Ruby.svg" alt="" />
+              Ruby
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="SQL.svg" alt="" />
+              SQL
+            </td>
+            <td>
+              <img src="./DataBase.svg" alt="" />
+              Data Base
+            </td>
+            <td>
+              <img src="./LinuxShell.svg" alt="" />
+              Linux Shell
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="FunctionalProgramming.svg" alt="" />
+              Functional Programming
+            </td>
+            <td>
+              <img src="./regex.svg" alt="" />
+              Regex
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="container mb-5">
+      <h4>
+        Preparation Kit
+        <a style="font-size: 1rem; text-decoration: none" href=""
+          >View All Kits</a
+        >
+      </h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h4>1 Weel Preparation Kit</h4>
+            <p>
+              Challenges: <span class="text-dark">21</span> Attempts:
+              <span class="text-dark">217542</span>
+              , Mock Tests: <span class="text-dark">0</span>
+            </p>
+            <div class="d-flex justify-content-start align-items-center">
+              <p class="grayBox">Problem Solving (Basic)</p>
+              <p class="grayBox">Problem Solving (Intermediate)</p>
+              <p class="text-dark">+1</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h4>1 Month Preparation Kit</h4>
+            <p>
+              Challenges: <span class="text-dark">54</span> Attempts:
+              <span class="text-dark">104427</span>
+              , Mock Tests: <span class="text-dark">0</span>
+            </p>
+            <div class="d-flex justify-content-start align-items-center">
+              <p class="grayBox">Problem Solving (Basic)</p>
+              <p class="grayBox">Problem Solving (Intermediate)</p>
+              <p class="text-dark">+1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="d-flex justify-content-center">
+      <a href="">Contest Calendar</a>
+      <a href="">Blog</a>
+      <a href="">Scoring</a>
+      <a href="">Environment</a>
+      <a href="">FAQ</a>
+      <a href="">About Us</a>
+      <a href="">Support</a>
+      <a href="">Careers</a>
+      <a href="">Terms Of Service</a>
+      <a href="">Privacy Policy</a>
+      <a class="last__a" href="">Request a Feature</a>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

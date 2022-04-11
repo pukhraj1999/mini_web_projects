@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table - Way to represent data</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body{
+          color: white;
+          background-color: rgb(234, 89, 67);
+      }
+      h1{
+        text-align: center;
+        font-size: 4rem;
+        text-shadow: 0px 2px 5px black;
+      }
+      .container{
+          margin-top: 10rem;
+          display: flex;
+          justify-content: center;
+      }
+      table{
+          border-collapse:collapse ;
+          box-shadow: 0px 2px 5px 2px black;
+      }
+      th{
+          font-size: 2rem;
+          background-color: rgb(50, 196, 50);
+      }
+      td{
+          font-size: 1.5rem;
+      }
+      th,td{
+          text-align: center;
+          padding: 10px;
+          text-shadow: 0px 2px 2px black;
+          border:2px solid black;
+      }
+      tr:nth-child(even){
+          background-color: red;
+      }
+      tr:nth-child(odd){
+          background-color: orange;
+      }
+      @media only screen and (max-width:500px) {
+        h1{
+            font-size: 3rem;
+        }  
+        th,td{
+              font-size: 1rem;
+          }
+      }
+    </style>
+  </head>
+  <body></body>
+    <h1>Admin Panel</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>A</td>
+                <td>20</td>
+                <td>a@gmail.com</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>B</td>
+                <td>20</td>
+                <td>b@gmail.com</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>C</td>
+                <td>20</td>
+                <td>c@gmail.com</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>D</td>
+                <td>20</td>
+                <td>d@gmail.com</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>E</td>
+                <td>20</td>
+                <td>e@gmail.com</td>
+                <td>2</td>
+            </tr>
+        </table>
+    </div>
+  </body>
+</html>

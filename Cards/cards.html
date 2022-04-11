@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lets Play with Cards</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      body {
+        background-color: black;
+        color: black;
+        font-family: sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        padding: 20px;
+      }
+      .card {
+        width: 400px;
+        box-shadow: 0px 4px 12px red;
+        margin: 2rem;
+        background-color: white;
+      }
+      .card:hover {
+        animation: updown 2s ease-in-out alternate infinite;
+      }
+      .card > img {
+        height: 250px;
+      }
+      .card > .content {
+        padding: 20px;
+      }
+      .content > h1 {
+        text-align: center;
+      }
+      .btn-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .btn-box > button {
+        font-size: 1.2rem;
+        padding: 5px;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 2px solid red;
+        cursor: pointer;
+      }
+      .btn-box > button:hover {
+        color: red;
+        background-color: white;
+        border: 2px solid red;
+      }
+      @keyframes updown {
+        from {
+          transform: translateY(-20px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img
+          src="https://www.cheatsheet.com/wp-content/uploads/2021/09/Netflix-Squid-Game-poster-1200x633.jpg"
+          alt=""
+        />
+        <div class="content">
+          <h1>Squid Games</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+            fuga molestiae repudiandae beatae assumenda maiores nobis distinctio
+            qui consequuntur sit? Nostrum ea vero molestiae maxime aliquam nobis
+            fugiat soluta dolore.
+          </p>
+          <div class="btn-box">
+            <button>Read More</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://www.cheatsheet.com/wp-content/uploads/2021/09/Netflix-Squid-Game-poster-1200x633.jpg"
+          alt=""
+        />
+        <div class="content">
+          <h1>Squid Games</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+            fuga molestiae repudiandae beatae assumenda maiores nobis distinctio
+            qui consequuntur sit? Nostrum ea vero molestiae maxime aliquam nobis
+            fugiat soluta dolore.
+          </p>
+          <div class="btn-box">
+            <button>Read More</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://www.cheatsheet.com/wp-content/uploads/2021/09/Netflix-Squid-Game-poster-1200x633.jpg"
+          alt=""
+        />
+        <div class="content">
+          <h1>Squid Games</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+            fuga molestiae repudiandae beatae assumenda maiores nobis distinctio
+            qui consequuntur sit? Nostrum ea vero molestiae maxime aliquam nobis
+            fugiat soluta dolore.
+          </p>
+          <div class="btn-box">
+            <button>Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
