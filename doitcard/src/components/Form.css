@@ -1,0 +1,44 @@
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+.box {
+  display: flex;
+  justify-content: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form > input,
+textarea {
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+.btn_box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+button {
+  font-size: 2rem;
+  background-color: rgb(87, 218, 87);
+  color: white;
+  padding: 10px;
+  border: 2px solid rgb(87, 218, 87);
+  border-radius: 20px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: black;
+  color: rgb(87, 218, 87);
+  border: 2px solid rgb(87, 218, 87);
+}
+
+.card__box {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
