@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Music Player</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        color: white;
+        background-color: darkorchid;
+      }
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+      }
+      p,
+      i {
+        text-align: center;
+
+        font-size: 2rem;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .musicBox {
+        box-shadow: 0px 2px 10px 2px black;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: crimson;
+      }
+      .imgBox {
+        display: flex;
+        justify-content: center;
+      }
+      .imgBox > img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        animation: rotate 2s linear infinite;
+      }
+      .seekContainer {
+        margin-bottom: 1rem;
+      }
+      .seekInfo {
+        display: flex;
+        justify-content: space-between;
+      }
+      .seekBox {
+        height: 5px;
+        background-color: white;
+        border-radius: 5px;
+      }
+      .seekBar {
+        height: 5px;
+        background-color: purple;
+        width: 20px;
+        border-radius: 5px;
+      }
+      .controller {
+        display: flex;
+        justify-content: space-around;
+      }
+      hr {
+        margin-bottom: 1rem;
+      }
+      i {
+        cursor: pointer;
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="musicBox">
+        <h1>Music Player</h1>
+        <hr />
+        <p id="title">title</p>
+        <div class="imgBox">
+          <img
+            id="image"
+            src="https://flxt.tmsimg.com/assets/p10182728_b_v13_bd.jpg"
+            alt=""
+          />
+        </div>
+        <div class="seekContainer">
+          <div class="seekInfo">
+            <span id="curDur">00:00</span>
+            <span id="totalDur">00:00</span>
+          </div>
+          <div class="seekBox">
+            <div id="slider" class="seekBar"></div>
+          </div>
+        </div>
+        <div class="controller">
+          <i onclick="prevTrack()" class="fa-solid fa-angles-left"></i>
+          <i id="play" onclick="playTrack()" class="fa-solid fa-play"></i>
+          <i
+            id="pause"
+            onclick="pauseTrack()"
+            style="display: none"
+            class="fa-solid fa-pause"
+          ></i>
+          <i onclick="nextTrack()" class="fa-solid fa-angles-right"></i>
+        </div>
+      </div>
+    </div>
+    <script>
+      let title = document.getElementById("title");
+      let image = document.getElementById("image");
+
+      let slider = document.getElementById("slider");
+      let curDur = document.getElementById("curDur");
+      let totalDur = document.getElementById("totalDur");
+
+      let play = document.getElementById("play");
+      let pause = document.getElementById("pause");
+
+      let trackList = [
+        {
+          title: "epic",
+          image: "./artwork/epic.jpg",
+          path: "./music/epic.mp3",
+        },
+        {
+          title: "once again",
+          image: "./artwork/onceagain.webp",
+          path: "./music/onceagain.mp3",
+        },
+      ];
+
+      let index = 0;
+      let isPlaying = false;
+      let updateTimer;
+
+      let track = document.createElement("audio");
+
+      function loadTrack(index) {
+        clearInterval(updateTimer);
+        resetTrack();
+
+        title.textContent = trackList[index].title;
+        image.src = trackList[index].image;
+
+        track.src = trackList[index].path;
+        track.load();
+
+        track.addEventListener("ended", nextTrack);
+        updateTimer = setInterval(updateSlider, 1000);
+      }
+      function resetTrack() {
+        curDur.textContent = "00:00";
+        totalDur.textContent = "00:00";
+        slider.style.width = "0%";
+      }
+      function updateSlider() {
+        let sliderPos = 0;
+
+        if (!isNaN(track.duration)) {
+          sliderPos = track.currentTime * (100 / track.duration);
+          slider.style.width = `${sliderPos}%`;
+
+          let curMin = Math.floor(track.currentTime / 60);
+          let curSec = Math.floor(track.currentTime - curMin * 60);
+
+          let totalMin = Math.floor(track.duration / 60);
+          let totalSec = Math.floor(track.duration - totalMin * 60);
+
+          if (curMin < 10) curMin = "0" + curMin;
+          if (curSec < 10) curSec = "0" + curSec;
+          if (totalMin < 10) totalMin = "0" + totalMin;
+          if (totalSec < 10) totalSec = "0" + totalSec;
+
+          curDur.textContent = curMin + ":" + curSec;
+          totalDur.textContent = totalMin + ":" + totalSec;
+        }
+      }
+      function randomColor() {
+        let red = Math.floor(Math.random() * 256);
+        let green = Math.floor(Math.random() * 256);
+        let blue = Math.floor(Math.random() * 256);
+
+        document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+      }
+      function prevTrack() {
+        if (index > 0) index--;
+        else index = trackList.length - 1;
+
+        loadTrack(index);
+        playTrack();
+      }
+      function nextTrack() {
+        if (index < trackList.length - 1) index++;
+        else index = 0;
+
+        loadTrack(index);
+        playTrack();
+      }
+      function playTrack() {
+        track.play();
+        isPlaying = true;
+
+        play.style.display = "none";
+        pause.style.display = "block";
+
+        randomColor();
+      }
+      function pauseTrack() {
+        track.pause();
+        isPlaying = false;
+
+        play.style.display = "block";
+        pause.style.display = "none";
+
+        document.body.style.backgroundColor = "darkorchid";
+      }
+      loadTrack(index);
+    </script>
+  </body>
+</html>
