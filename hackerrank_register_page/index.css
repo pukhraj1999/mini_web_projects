@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.box{
+    margin-top: 5rem;
+}
+.box > h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.box > p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.form__box{
+    margin-top: 2rem;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+}
+.form__header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.form__header > .tab{
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 4px;
+    cursor: pointer;
+}
+.form__body{
+    padding: 10px;
+}
+
+.signup_input{
+    border: 0.2px solid black;
+    border-radius: 5px;
+    margin: 5px;
+}
+.signup_input > i{
+    padding: 8px;
+    font-size: 1.2rem;
+}
+.signup_input_checkbox{
+    margin: 5px;
+}
+.signup_input_checkbox > input{
+    padding: 8px;
+}
+.form__submit{
+    display: flex;
+    justify-content: end;
+}
+.form__submit > button{
+    font-size: 1.4rem;
+    padding: 10px;
+    background-color: #00751f;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.form__dividor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form__dividor > p{
+    font-size: 1.2rem;
+}
+.dividor__left{
+    height: 2px;
+    width: 80px;
+    background-color: grey;
+}
+.dividor__right{
+    height: 2px;
+    width: 80px;
+    background-color: grey;
+}
+.signup_input > input{
+    font-size: 1.2rem;
+    padding: 8px;
+    outline: none;
+    border: none;
+    margin: 5px;
+}
+.form__logos{
+    display: flex;
+    justify-content: space-around;
+    padding: 4px;
+}
+.form__logos > img{
+    height: 40px;
+}
