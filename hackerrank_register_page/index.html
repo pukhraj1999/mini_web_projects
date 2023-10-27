@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script defer src="./index.js"></script>
 </head>
 <body>
   <div class="container">
@@ -14,34 +15,59 @@
       <p>Practice coding, prepare for interviews, and get hired.</p>
       <div class="form__box">
         <div class="form__header">
-          <div class="tab">
-            <h4>Sign up</h4>
+          <div class="tab" id="signup_tab">
+            <h4> Sign up </h4>
           </div>
-          <div class="tab">
+          <div class="tab " id="login_tab">
             <h4>Log in</h4>
           </div>
         </div>
         <div class="form__body">
-          <form action="">
-            <div class="signup_input">
-              <i class="fa-solid fa-user-plus"></i>
-              <input type="text" placeholder="First & Last name">
-            </div>
-            <div class="signup_input">
-              <i class="fa-regular fa-envelope"></i>
-              <input type="text" placeholder="Email">
-            </div>
-            <div class="signup_input">
-              <i class="fa-solid fa-lock"></i>
-              <input type="text" placeholder="Your password">
-            </div>
-            <div class="signup_input_checkbox">
-              <input type="checkbox" name="" id=""> <span>I agree to HackerRank's <a href="">Terms of Service</a>  and <a href="">Privacy Policy</a>.</span>
-            </div>
-            <div class="form__submit">
-              <button>Create An Account</button>
-            </div>
-          </form>
+          <div id="signup">
+            <form action="">
+              <div class="signup_input">
+                <i class="fa-solid fa-user-plus"></i>
+                <input type="text" placeholder="First & Last name">
+              </div>
+              <div class="signup_input">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+              </div>
+              <div class="signup_input">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Your password">
+              </div>
+              <div class="signup_input_checkbox">
+                <input type="checkbox" name="" id=""> <span> I agree to HackerRank's <a href="">Terms of Service</a>  and <a href="">Privacy Policy</a>.</span>
+              </div>
+              <div class="form__submit">
+                <button>Create An Account</button>
+              </div>
+            </form>
+          </div>
+          <div id="login">
+            <form action="">
+              <div class="signup_input">
+                <i class="fa-solid fa-user"></i>
+                <input type="email" placeholder="Your username or email">
+              </div>
+              <div class="signup_input">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Your password">
+              </div>
+              <div class="login_links">
+                <div class="signup_input_checkbox">
+                  <input type="checkbox" >  <span>Remember</span>
+                </div>
+                <div>
+                  <a href="">Forget your password?</a>
+                </div>
+              </div>
+              <div class="form__submit">
+                <button>Login</button>
+              </div>
+            </form>
+          </div>
           <div class="form__dividor">
             <div class="dividor__left"></div>
             <p>or connect with</p>

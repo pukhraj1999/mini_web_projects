@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 .container{
     display: flex;
     justify-content: center;
+}
+.tab > h4{
+    margin: 10px;
+    font-size: 1.2rem;
 }
 .box{
     margin-top: 5rem;
@@ -40,12 +46,19 @@
     border: 0.2px solid black;
     border-radius: 5px;
     margin: 5px;
+    margin-top: 10px;
 }
 .signup_input > i{
     padding: 8px;
     font-size: 1.2rem;
 }
 .signup_input_checkbox{
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: 5px;
+}
+.signup_input_checkbox > span{
     margin: 5px;
 }
 .signup_input_checkbox > input{
@@ -56,7 +69,9 @@
     justify-content: end;
 }
 .form__submit > button{
-    font-size: 1.4rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
     padding: 10px;
     background-color: #00751f;
     color: white;
@@ -67,6 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 .form__dividor > p{
     font-size: 1.2rem;
@@ -95,4 +111,13 @@
 }
 .form__logos > img{
     height: 40px;
+}
+a{
+    text-decoration: none;
+    color: #097bbf;
+}
+.login_links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
